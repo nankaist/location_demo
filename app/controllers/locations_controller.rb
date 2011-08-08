@@ -26,6 +26,7 @@ class LocationsController < ApplicationController
   # GET /locations/new.xml
   def new
     @location = Location.new
+    @location.update_attribute(:ip_address, request.remote_ip)
 
     respond_to do |format|
       format.html # new.html.erb
